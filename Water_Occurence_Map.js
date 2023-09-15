@@ -80,6 +80,15 @@ var list2 = area_collection.aggregate_array('area').getInfo()
 // Combine two lists to see surface water area with coressponding date
 var area_statistic = list1.zip(list2)
 print(area_statistic);
+// Export list to Google Drive as CSV file
+var fc = ee.FeatureCollection(area_statistic.map(function(point) {
+  return ee.Feature(null, {'value': point});
+}));
+Export.table.toDrive(fc,
+"myTask",
+"myExportFolder",
+"myList", 
+"CSV");
 //////////////// Part 3: Develop Water Occurence Map
 // To avoid computational time out, you can alternatively lock Part 2 or Part 3 as these 2 parts function independently 
 // Sort image collection by months
