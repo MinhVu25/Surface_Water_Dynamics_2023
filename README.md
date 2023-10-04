@@ -1,5 +1,5 @@
 # Surface_Water_Dynamics
-Supplementary Material 1 to Journal paper 
+Supplementary Material to Journal paper 
 
 Expected Published in 2023
 
